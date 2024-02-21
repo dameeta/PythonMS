@@ -1,0 +1,28 @@
+Simple Flask Web App design:
+
+1. pip install virtualenv
+2. virtualenv venv
+3. venv\Scripts\activate
+4. pip install flask
+
+create app.py file at root directory
+
+from flask import Flask
+
+app = Flask(__name__)
+
+@app.route('/')
+def WelcomePage():
+    return 'Welcome to Flask Api'
+
+if __name__ == '__main__':
+    app.run()
+
+run through command line
+
+set FLASK_APP=app.py 
+flask run
+flask run --host=192.168.29.31 --port=9000
+
+
+
