@@ -25,4 +25,54 @@ flask run
 flask run --host=192.168.29.31 --port=9000
 
 
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Sample Template</title>
+    </head>
+    <body>
+        <h3>Welcome to index page </h3>
+
+        <p> Flask Template is running </p>
+
+
+    </body>
+    </html>
+    
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Hello User</title>
+    </head>
+    <body>
+        <h3>Welcome to hello page </h3>
+
+        <p> Hello , {{name}} </p>
+
+
+    </body>
+    </html>
+    
+
+
+from flask import Flask,render_template
+
+app = Flask(__name__)
+
+@app.route('/')
+def WelcomePage1():
+    return render_template("index.html")
+
+@app.route('/<name>')
+def WelcomePage2(name):
+    return render_template("hello.html",name=name)
+
+if __name__ == '__main__':
+    app.run(debug=True,host='0.0.0.0',port= 3400)
+
+
+
 
