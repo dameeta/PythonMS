@@ -35,3 +35,23 @@ C:\Users\Hp>kubectl version
 Client Version: v1.29.1
 Kustomize Version: v5.0.4-0.20230601165947-6ce0bf390ce3
 Server Version: v1.29.1
+
+C:\Users\Hp>cd ..
+
+C:\Users>cd ..
+
+C:\>cd kubernetes-deploy
+
+C:\kubernetes-deploy>kubectl apply -f kuber-deploy.yaml
+deployment.apps/kubernetes-app-test created
+
+C:\kubernetes-deploy>kubectl get pods
+NAME                                  READY   STATUS              RESTARTS   AGE
+kubernetes-app-test-fdc9645cb-8w9kf   0/1     ContainerCreating   0          25s
+kubernetes-app-test-fdc9645cb-nzxqh   0/1     ContainerCreating   0          25s
+kubernetes-app-test-fdc9645cb-wvpmg   0/1     ContainerCreating   0          25s
+
+C:\kubernetes-deploy>kubectl get svc
+NAME         TYPE        CLUSTER-IP   EXTERNAL-IP   PORT(S)   AGE
+kubernetes   ClusterIP   10.96.0.1    <none>        443/TCP   9m2s
+
